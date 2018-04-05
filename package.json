@@ -3,8 +3,23 @@
   "version": "0.0.1",
   "description": "database migrations for milky way app",
   "scripts": {
-    "test": ""
+    "up": "knex migrate:latest",
+    "down": "knex migrate:rollback",
+    "reset": "npm run down && npm run up",
+    "new": "knex migrate:make",
+    "status": "knex migrate:currentVersion",
+    "test": "npm run test:clean && NODE_ENV=test npm run up && NODE_ENV=test npm run down && npm run test:clean",
+    "test:clean": "rm -rf test.db"
   },
   "author": "Danny Hadley <dadleyy@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "knex": "^0.14.4",
+    "pg": "^7.4.1",
+    "sqlite3": "^4.0.0"
+  },
+  "devDependencies": {
+    "debug": "^3.1.0"
+  }
 }

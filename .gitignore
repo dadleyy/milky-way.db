@@ -12,6 +12,8 @@ dump.rdb
 .env-*
 
 .keys
+test.db
+.env
 
 
 ############################

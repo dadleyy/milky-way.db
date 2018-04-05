@@ -1,0 +1,19 @@
+language: node_js
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+node_js:
+  - 8
+sudo: false
+install:
+  - npm install
+script:
+  - mkdir -p ./.keys
+  - openssl genrsa -out ./.keys/private.pem 2048
+  - openssl rsa -in ./.keys/private.pem -outform PEM -pubout -out ./.keys/public.pem
+  - npm run test
