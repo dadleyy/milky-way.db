@@ -1,0 +1,10 @@
+{
+  "name": "milky-way.db",
+  "version": "0.0.1",
+  "description": "database migrations for milky way app",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Danny Hadley <dadleyy@gmail.com>",
+  "license": "ISC"
+}
